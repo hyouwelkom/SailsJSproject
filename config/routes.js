@@ -22,6 +22,16 @@
 
 module.exports.routes = {
 
+  'get /bis': {
+    controller:'AddressController',
+    action:'ma_methode'
+  },
+
+  'get /test': {
+    controller: 'AccountController',
+    action: 'index'
+  },
+
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
