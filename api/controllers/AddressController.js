@@ -6,8 +6,19 @@
  */
 
 module.exports = {
-	ma_methode: function(req, res) {
-	  return res.json({user: 'toto'});
+  ma_methode: function(req, res) {
+    return res.json({user: 'toto'});
+    //return res.view('homepage');
+  },
+  find: function (req, res) {
+    var where = {
+      owner : req.user
+    };
+    Address.find(where).exec(function (err, records) {
+      return res.json(records);
+    });
   }
+
+
 };
 

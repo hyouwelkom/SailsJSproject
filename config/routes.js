@@ -22,38 +22,53 @@
 
 module.exports.routes = {
 
-  'get /bis': {
-    controller:'AddressController',
-    action:'ma_methode'
-  },
-
-  'get /test': {
-    controller: 'AccountController',
-    action: 'index'
-  },
-
   /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
+   * etc. depending on your default view engine) your home page.              *
+   *                                                                          *
+   * (Alternatively, remove this and add an `index.html` file in your         *
+   * `assets` directory)                                                      *
+   *                                                                          *
+   ***************************************************************************/
 
   '/': {
     view: 'homepage'
-  }
+  },
+  '/test': {
+    view: 'homepage'
+  },
+
+
 
   /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Custom routes here...                                                    *
+   *                                                                          *
+   * If a request to a URL doesn't match any of the custom routes above, it   *
+   * is matched against Sails route blueprints. See `config/blueprints.js`    *
+   * for configuration options and examples.                                  *
+   *                                                                          *
+   ***************************************************************************/
+
+  'get /bis': {
+    controller: 'AddressController',
+    action: 'ma_methode'
+  },
+  'get /account': {
+    controller: 'AccountController',
+    action: 'index'
+  },
+  'get /login': {
+    view: 'login'
+  },
+
+  'post /login': 'AuthController.login',
+
+  'get /logout': 'AuthController.logout',
+
+  'get /signup': {
+    view: 'signup'
+  }
 
 };

@@ -11,5 +11,9 @@ module.exports = {
     street: {
       type: 'string'
     },
+
+    owner: {
+      model: 'user'
+    }
   },
 };

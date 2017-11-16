@@ -1,5 +1,8 @@
-<h1> ISSOU </h1>
-<p><%= name %></p>
-<%= address %>
-<%= un_obj %>
-<%= mon_tableau_simple %>
+<h1> <%= lesadresses.length %> adresses trouvées </h1>
+
+<ul>
+  <% for(var i=0; i<lesadresses.length; i++) { %>
+  <li><%= i+1 %>ere adresse : <%= lesadresses[i].street %></li>
+  <% } %>
+</ul>
+
