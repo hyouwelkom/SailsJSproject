@@ -62,6 +62,11 @@ module.exports.routes = {
   'get /login': {
     view: 'login'
   },
+  'get /verrou': {
+    controller: 'AccountController',
+    action: 'verrou'
+  },
+
 
   'post /login': 'AuthController.login',
 
